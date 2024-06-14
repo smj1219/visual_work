@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="conrainer">
+        <h1>회원가입 폼입니다.</h1>
+        <form action="signup.jsp">
+            <label for="email">이메일</label>
+            <input type="text" id="email" name="email"><br>
+            <fieldset>
+                <legend>성별 선택</legend><!--스크린리더기에서 무엇을 선택해야하는지 읽어주는 용도--> 
+                <label>
+                    <input type="radio" name="gender" value="man" checked id="gender"> 남자<!--radio 는 한가지만 선택가능-->
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="woman" id="gender"> 여자<!--name 속성이 같아야 그룹으로 묶임-->
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>취미 정보 선택</legend>
+                <label>
+                    <input type="checkbox" name="hobby" value="soccer" id="hobby"> 축구<!--checkbox는 여러개 선택가능-->
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="baking" id="hobby"> 베이킹<!--실제로 서버열로 넘어가는 것은 value=임 벨류가 없으면 주소창에 확인 불가-->
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="piano" id="hobby"> 피아노
+                </label>
+                <label>
+                    <input type="checkbox" name="hobby" value="etc" id="hobby"> 기타<!--class 추가-->x
+                </label>
+            </fieldset>
+
+            <label for="jop">직업</label>
+            <select name="jop" id="jop">
+                <option value="">선택</option>
+                <option value="progammer">프로그래머</option>
+                <option value="doctor">의사</option>
+                <option value="pianist">피아니스트</option>
+                <option value="etc">기타</option>
+            </select>
+            <label for="lunch">점심선택</label>
+            <!--option 에 value 가 없으면 innrtext 가 전송된다-->
+            <select name="lunch" id="lunch">
+                <optgroup label="분식">
+                    <option>라면</option>
+                    <option>쫄면</option>
+                    <option>김밥</option>
+                </optgroup>
+                <optgroup label="중식">
+                    <option>자장면</option>
+                    <option>짬뽕</option>
+                    <option>군만두</option>
+                </optgroup>
+            
+            </select>
+            <br>
+            <label for="myFile">회원정보</label>
+            <br>
+            <textarea name="text" id="textArea"></textarea>
+            <br>
+            
+            <button onclick="send()">가입</button>
+        </form>
+        <script>
+            function send() {
+                let msg = document.querySelector("#email" + "#gender" + "#hobby" + "#job" +"#lunch");
+                document.querySelector("#textArea").value = msg;
+                }
+        </script>
+    </div>
+</body>
+</html>

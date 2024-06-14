@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열 객체의 다양한 함수 활용</h1>
+    <script>
+        const names=["김구라","해골","원숭이"]
+
+        for(let i=0; i<names.length; i++){
+            names[i]=names[i]+"님";
+        }
+        //원본 배열의 아이템을 활용해서 새로운 배열을 얻어내는 map() 함수
+        const original=["김구라","해골","원숭이"]
+        const newNames = original.map((item)=>{
+            console.log("호출됨"+item);
+            return item+"님";
+        })
+        
+        // map() 함수의 람다식 함수(로직이 간단한 경우에 가능)
+        const newArray2 = original.map(item=>item+"님");
+
+
+        /*
+            nums 배열에 저장된 아이템을 이용해서
+            1. 음수는 제외하고 (filter)
+            2. 양수의 제곱으로 구성된 새로운 배열을 얻어내보세요 (map)
+        */
+        const nums = [1, 5, 8, -10, -20, 10, 30];
+
+        const newNums = nums.filter(item=>item>=0);
+        const newNums2 = newNums.map(item=>item*item);
+
+        //위의 2줄의 코드를 한줄로 표현할 수 있다
+        const newNums3 = nums.filter(item=>item>=0).map(item=>item*item);
+    </script>
+</body>
+</html>

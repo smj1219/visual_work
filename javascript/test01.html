@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>function 응용 </h1>
+    <p>
+        버튼을 누르면 알림창이 뜨게 만들어보기
+        사진을 누르면 알림창이 뜨게 만들어보기
+
+    </p>
+    <button onclick="show()">알림</button>
+    <button onclick="show2()">알림2</button>
+    <button onclick="show3()">알림3</button>
+    
+    <img src="https://picsum.photos/200/300" alt="김구라 사진" onclick="show3()">
+
+
+    <script>
+        let show = function(){
+            alert("hello")
+        }
+
+        //아래 두가지 방법으로도 가능!
+        function show2(){
+            alert("i'm")
+        }
+
+        let show3 = ()=>{
+            alert("minjung song")
+        }
+
+
+
+
+    </script>
+</body>
+</html>

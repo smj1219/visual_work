@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form action="login.jsp">
+        <table>
+            <tr>
+                <td><label for="name">이름입력</label></td>
+                <td><input type="text" id="name" name="action"></td>
+            </tr>  
+        </table>
+    </form>
+    <br>
+    <button id="send">입력</button>
+    <br>
+    <p id="oneName"></p>
+    <br>
+    <button id="outPut">모두 출력</button>
+    <br>
+    <p id="allName2"></p>
+    <script>
+        let allName = [];
+
+        document.querySelector("#send").addEventListener("click", ()=>{
+            let yourName = document.querySelector("#name").value;
+            document.querySelector("#oneName").innerText = yourName
+            allName.push(yourName)
+        })
+
+        // document.querySelector("#outPut").addEventListener("click", ()=>{
+        //     
+        //     for(let i=0;i<allName.length; i++) {
+        //         document.querySelector("#allName2").innerText = allName[i];
+        //     }
+        // })
+        
+        document.querySelector("#outPut").addEventListener("click", ()=>{
+           
+            document.querySelector("#allName2").innerText = allName;
+
+        })
+    </script>
+
+</body>
+</html>

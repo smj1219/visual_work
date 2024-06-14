@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <form action="signup.jsp">
+       
+        <br>
+        <select id="gender">
+            <option value="man" >남성</option>
+            <option value="woman" selected>여성</option>
+        </select>
+        <select id="age">
+            <option value="a" >20세 이상</option>
+            <option value="b" selected>20세 이하</option>
+
+        </select>
+    </form>
+    <br>
+    <button type="button" onclick="send()">확인</button>
+    <br>
+        <p>
+            <strong id="one"></strong>
+        </p>
+
+        <script>
+            function send(){
+                //입력한 정보를 불러와서 확인했을 때
+                let gen=document.querySelector("#gender").value;
+                let age2=document.querySelector("#age").value;
+                //만약 여자고 20세 이상이 맞다면
+                let result1 = gen == "woman";
+                let result2 = age2 == "a";
+
+
+                if(result1 && result2){
+                    document.querySelector("#one").innerText="이용이 가능합니다";
+                }else{
+                    document.querySelector("#one").innerText="이용이 불가능합니다";
+               }
+            }
+
+        </script>
+</body>
+</html>
