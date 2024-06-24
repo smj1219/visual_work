@@ -73,6 +73,8 @@
         </div>
         <div class="nav">
             <button id="leftBtn">&larr;</button>
+            <button id="upBtn">&uarr;</button>
+            <button id="downBtn">&darr;</button>
             <button id="rightBtn">&rarr;</button>
         </div>
     </div>
@@ -80,17 +82,31 @@
 
         // y 축 기준 회전하는 값을 저장할 변수 선언하고 초기값 0 대입
         let rY=0;
+        let rX=0;
 
         document.querySelector("#leftBtn").addEventListener("click", ()=>{
             rY -= 90;
             document.querySelector(".cube")
-                .style.transform="translateZ(-200px) rotateY("+rY+"deg)";
+                .style.transform="translateZ(-200px) rotateX("+rX+"deg) rotateY("+rY+"deg)";
         });
 
         document.querySelector("#rightBtn").addEventListener("click", ()=>{
             rY += 90;
             document.querySelector(".cube")
-                .style.transform=`translateZ(-200px) rotateY(${rY}deg)`;
+                .style.transform=`translateZ(-200px) rotateY(${rY}deg) rotateX(${rX}deg)`;
+        });
+
+        document.querySelector("#upBtn").addEventListener("click", ()=>{
+            rX += 90;
+            document.querySelector(".cube")
+                .style.transform="translateZ(-200px) rotateX("+rX+"deg) rotateY("+rY+"deg)";
+        });
+
+        document.querySelector("#downBtn").addEventListener("click", ()=>{
+           
+            rX -= 90;
+            document.querySelector(".cube")
+                .style.transform=`translateZ(-200px) rotateY(${rY}deg) rotateX(${rX}deg)`;
         });
     </script>    
 </body>

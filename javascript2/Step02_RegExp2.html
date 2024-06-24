@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        문자열 <input type="text" id="source" placeholder="검증할 문자열 입력...">
+        <br>
+        정규표현식 <input type="text" id="expression" placeholder="정규표현식 입력...">
+        <br>
+        <button id="testBtn">매칭 여부 확인하기</button>
+        <p>결과 : <strong id="result"></strong></p>
+        <p>찾은 문자열 : <strong id="result2"></strong></p>
+    </div>
+    <script>
+        document.querySelector("#testBtn").addEventListener("click",()=>{
+            const source=document.querySelector("#source").value;
+            const reg = document.querySelector("#expression").value;
+            
+            const reg2 = new RegExp(reg);
+            const result=reg2.test(source);
+            //정규표현식 객체의 exec() 함수를 호출하면서 문자열을 넣어주면 
+            //매칭되는 문자열을 배열에 담아서 리턴해준다
+            const result2=reg2.exec(source);
+            console.log(result2)
+
+            document.querySelector("#result").innerText = result;
+            document.querySelector("#result2").innerText =result2;
+        })
+
+    </script>
+</body>
+</html>

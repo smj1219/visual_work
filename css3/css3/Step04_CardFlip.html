@@ -62,13 +62,14 @@
             //#myCard div 의 참조값을 얻어와서 상수에 담아 놓고 사용하기 
             const card=document.querySelector("#myCard");
             //만일 rotate 클래스가 이미 존재한다면
-            if(card.classList.contains("rotate")){
-                // rotate 클래스를 제거하고 
-                card.classList.remove("rotate");
-            }else{//존재하지 않는다면
-                // rotate 클래스를 추가한다.
-                card.classList.add("rotate");
-            }
+            // if(card.classList.contains("rotate")){
+            //     // rotate 클래스를 제거하고 
+            //     card.classList.remove("rotate");
+            // }else{//존재하지 않는다면
+            //     // rotate 클래스를 추가한다.
+            //     card.classList.add("rotate");
+            // }
+            card.classList.toggle("rotate");
         });
     </script>   
 </body>
