@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "제목1",
+      "writer": "김구라"
+    },
+    {
+      "id": "2",
+      "title": "제목2",
+      "writer": "해골"
+    },
+    {
+      "id": "3",
+      "title": "날씨가 흐려요!",
+      "writer": "원숭이"
+    },
+    {
+      "id": "b9f0",
+      "title": "json 서버 사용하기",
+      "writer": "acorn"
+    }
+  ]
+}
